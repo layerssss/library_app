@@ -1,0 +1,15 @@
+= panel heading: 'Books' do
+  .panel-body
+    = bootstrap_form_tag method: :get do |f|
+      = f.text_field :keyword, value: params[:keyword]
+      = f.submit 'Search'
+      = info_btn_to 'New Book', new_book_path
+    .table-responsive
+      = table_for @books, table_html: { class: :table } do |t|
+        = t.column :code
+        = t.column :title
+        = t.column :author
+        = t.column :borrower
+        = t.column data: 'View Borrowers', link_method: :get
+        = t.column data: 'Edit', link_action: :edit
+        = t.column data: 'Delete', link_method: :delete

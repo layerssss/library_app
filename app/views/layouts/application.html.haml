@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Library App
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
+    %meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}
+    %meta{:content => "telephone=no", :name => "format-detection"}
+    %meta{:content => "width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body{ style: 'padding-top: 70px;' }
+    = navbar fixed: :top, container: 'fluid' do
+      = navbar_header brand: 'Library App', brand_link: root_path
+      = navbar_collapse do
+        = navbar_group do
+          = navbar_item 'Home', root_path
+          = navbar_item 'Books', books_path
+          = navbar_item 'Borrowers', borrowers_path
+    .container-fluid
+      - flash.each do |type, message|
+        .alert{class: { alert: 'alert-danger', notice: 'alert-success' }[type.to_sym]}
+          = message
+      = yield

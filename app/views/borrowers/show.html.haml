@@ -1,0 +1,23 @@
+= panel heading: "Borrowings of #{@borrower}" do
+  .panel-body
+    = nav do
+      = link_to 'Outstanding', @borrower
+      = link_to 'History', history_borrower_path(@borrower)
+    .table-responsive
+      = table_for @loans, table_html: { class: :table } do |t|
+        = t.column :book
+        = t.column :start
+        = t.column :end do |loan|
+          = bootstrap_form_for loan, layout: :inline, remote: true do |f|
+            = f.date_field :end
+            = f.submit
+        = t.column do |loan|
+          = btn_to 'Return', loan_path(loan, 'loan[returned]': true), method: :put, remote: true
+    = panel heading: "New Borrowing for #{@borrower}" do
+      .panel-body
+        = bootstrap_form_for @loan, remote: true do |f|
+          = f.hidden_field :borrower_id
+          = f.collection_select :book_id, Book.available, :id, :to_s
+          = f.static_control :start
+          = f.date_field :end
+          = f.submit

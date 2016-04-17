@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: loans
+#
+#  id          :integer          not null, primary key
+#  borrower_id :integer
+#  book_id     :integer
+#  start       :date
+#  end         :date
+#  returned    :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -1,0 +1,8 @@
+= panel heading: 'New Loan' do
+  .panel-body
+    = bootstrap_form_for @loan do |f|
+      = f.collection_select :borrower_id, Borrower.all, :id, :to_s
+      = f.collection_select :book_id, Book.available, :id, :to_s
+      = f.static_control :start
+      = f.date_field :end
+      = f.submit

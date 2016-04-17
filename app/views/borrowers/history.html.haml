@@ -1,0 +1,10 @@
+= panel heading: "Borrowings of #{@borrower}" do
+  .panel-body
+    = nav do
+      = link_to 'Outstanding', @borrower
+      = link_to 'History', history_borrower_path(@borrower)
+    .table-responsive
+      = table_for @loans, table_html: { class: :table } do |t|
+        = t.column :book
+        = t.column :start
+        = t.column :end

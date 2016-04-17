@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: books
+#
+#  id         :integer          not null, primary key
+#  code       :string(255)
+#  title      :string(255)
+#  author     :string(255)
+#  returned   :boolean          default(TRUE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: BOOK1
+  title: Lorem Ipsum
+  author: Cicero
+
+two:
+  code: BOOK2
+  title: My Title
+  author: Smith

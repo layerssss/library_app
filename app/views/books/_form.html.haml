@@ -1,0 +1,5 @@
+= bootstrap_form_for @book do |f|
+  = f.text_field :code
+  = f.text_field :title, autocomplete: :off
+  = f.text_field :author
+  = f.submit

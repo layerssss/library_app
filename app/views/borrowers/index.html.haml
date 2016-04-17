@@ -1,0 +1,13 @@
+= panel heading: 'Borrowers' do
+  .panel-body
+    = bootstrap_form_tag method: :get do |f|
+      = f.text_field :keyword, value: params[:keyword]
+      = f.submit 'Search'
+      = info_btn_to 'New Borrower', new_borrower_path
+    .table-responsive
+      = table_for @borrowers, table_html: { class: :table } do |t|
+        = t.column :code
+        = t.column :name
+        = t.column data: 'View Borrowings', link_method: :get
+        = t.column data: 'Edit', link_action: :edit
+        = t.column data: 'Delete', link_method: :delete
