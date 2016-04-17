@@ -105,6 +105,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     nprogress-rails (0.1.6.7)
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -127,9 +128,14 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_bootstrap_navbar (2.0.1)
       bootstrap-navbar (~> 2.0)
       rails (>= 3.0.0)
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (4.2.6)
       actionpack (= 4.2.6)
       activesupport (= 4.2.6)
@@ -186,7 +192,9 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   nprogress-rails
+  pg
   rails (~> 4.2)
+  rails_12factor
   rails_bootstrap_navbar
   sass-rails
   spring
