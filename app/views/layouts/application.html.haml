@@ -13,12 +13,18 @@
     = csrf_meta_tags
   %body{ style: 'padding-top: 70px;' }
     = navbar fixed: :top, container: 'fluid' do
-      = navbar_header brand: 'Library App', brand_link: root_path
+      = navbar_header brand: '<span class="fa fa-cog"></span>Library App', brand_link: root_path
       = navbar_collapse do
         = navbar_group do
-          = navbar_item 'Home', root_path
-          = navbar_item 'Books', books_path
-          = navbar_item 'Borrowers', borrowers_path
+          = navbar_item root_path do
+            %span.fa.fa-home
+            Home
+          = navbar_item books_path do
+            %span.fa.fa-book
+            Books
+          = navbar_item borrowers_path do
+            %span.fa.fa-users
+            Users
     .container-fluid
       - flash.each do |type, message|
         .alert{class: { alert: 'alert-danger', notice: 'alert-success' }[type.to_sym]}
