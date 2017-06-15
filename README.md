@@ -1,4 +1,9 @@
-## Specification
+This is a demo as part of the interview before I started working for [Daniel Fone](https://github.com/danielfone/).
+
+It a simple library booking system build by Rails. Here's the original spec:
+
+```
+# Specification
 
 The following is a simple library management app. A user can manage books, borrowers and loans.
 
@@ -25,4 +30,6 @@ The following is a simple library management app. A user can manage books, borro
   * They should be able to return a book currently on loan
 * A user should be able to view a book or a borrower and see their borrowing/loan history
   * The borrowing history should list the book, borrower, issue datetime, due date, and return datetime
-  
+ ```
+
+The demo is running on Heroku: [https://library-app-demo.herokuapp.com/](https://library-app-demo.herokuapp.com/)
